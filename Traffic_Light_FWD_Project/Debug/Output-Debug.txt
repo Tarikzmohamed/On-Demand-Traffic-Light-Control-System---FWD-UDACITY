@@ -1,0 +1,1 @@
+﻿The program '[0x14] Traffic_Light_FWD_Project.elf' has exited with code 0 (0x0).
