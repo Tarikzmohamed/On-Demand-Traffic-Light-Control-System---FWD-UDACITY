@@ -48,7 +48,7 @@ APIs, bit manipulation, MC_REGISTERS and typedef. At the Application Layer there
 controls the logic of the system.
 ![System flow chart](https://user-images.githubusercontent.com/113884712/207631629-75c05f17-aa06-4d50-a0f1-3a612f2e780a.png)
 
-System Constrains
+System Constrains:
 This system has a constrain at which if the pedestrian button is pressed, no further action is taken if the
 button was pressed again. The button needs to only have a short press not a long press. Pressing Button
 Long will not be detected because Button and Interrupt work on rising Edge only, so it will not be
