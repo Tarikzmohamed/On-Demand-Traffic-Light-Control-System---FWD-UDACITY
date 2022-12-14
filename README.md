@@ -3,6 +3,7 @@ Project_2 System Design and Description is illustrated in detail in FWD_TRAFFIC_
 located in Project_2 System Design and Description folder
 
 System Description:
+
 This project is an on-demand traffic lights system. It consists of three LEDs for the cars, three LEDs for
 the pedestrians and a button for pedestrians which allows them to pass the road.
 The system has two modes. The first mode, the system operates under normal conditions where there are
@@ -12,7 +13,9 @@ button which allows them to pass the road depending on the stage at which the fi
 after the second mode is executed, the system returns back to the first mode.
 
 System Design
-2.1 Hardware requirements:
+
+Hardware requirements:
+
 The system consists of:
 1. AVR ATmega32 (1MHz) microcontroller
 2. One push button connected to INT0 pin for pedestrian
@@ -23,11 +26,15 @@ The system consists of:
 7. 1 x 10K Ohm resistor
 
 Software Operation requirements:
+
 In normal mode:
+
 1. Cars' LEDs will be changed every five seconds starting from Green then yellow then red then yellow
 then Green.
 2. The Yellow LED will blink for five seconds before moving to Green or Red LEDs.
+
 In pedestrian mode:
+
 1. Change from normal mode to pedestrian mode when the pedestrian button is pressed.
 2. If pressed when the cars' Red LED is on, the pedestrian's Green LED and the cars' Red LEDs will be on
 for five seconds, this means that pedestrians can cross the street while the pedestrian's Green LED is on.
@@ -41,6 +48,7 @@ cars' Green LED will be on.
 6. Traffic lights signals are going to the normal mode again.
 
 System Drivers
+
 The system has five drivers. LED Driver, Button Driver, DIO Driver , Timer Driver, and Interrupt Driver
 or API. The DIO Driver and Timer Driver are located at the ECUAL Layer as well as Interrupt Driver.
 The LED Driver and Button Driver are located at the MCAL Layer. At the Utilities layer there are three
@@ -49,6 +57,7 @@ controls the logic of the system.
 ![System flow chart](https://user-images.githubusercontent.com/113884712/207631629-75c05f17-aa06-4d50-a0f1-3a612f2e780a.png)
 
 System Constrains:
+
 This system has a constrain at which if the pedestrian button is pressed, no further action is taken if the
 button was pressed again. The button needs to only have a short press not a long press. Pressing Button
 Long will not be detected because Button and Interrupt work on rising Edge only, so it will not be
